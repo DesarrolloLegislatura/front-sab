@@ -1,0 +1,23 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        EMAIL: ${EMAIL}
+        NAME: ${NAME}
+        GITHUB_TOKEN: ${GITHUB_TOKEN}
+    container_name: front-sab
+    volumes:
+      - .:/usr/src/app:cached
+      - /usr/src/app/node_modules
+    ports:
+      - "4000:5173"
+    environment:
+      - NODE_ENV=development
+      - EMAIL=${EMAIL}
+      - NAME=${NAME}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    command: [ "npm", "run", "dev" ]
+
+volumes:
+  node_modules:
