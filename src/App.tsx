@@ -1,12 +1,7 @@
-import { Outlet } from 'react-router-dom';
+import MainLayout from './layouts/MainLayout';
 
 const App = () => {
-	return (
-		<div>
-			<h1>Front SAB</h1>
-			<Outlet />
-		</div>
-	);
+	return <MainLayout />;
 };
 
 export default App;
