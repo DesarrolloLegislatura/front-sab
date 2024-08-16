@@ -1,9 +1,9 @@
-import Main from './layouts/Main';
+import MainLayout from './layouts/MainLayout';
 
 const App = () => {
 	return (
 		<>
-			<Main />
+			<MainLayout />
 		</>
 	);
 };
