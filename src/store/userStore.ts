@@ -1,10 +1,12 @@
 import { create } from 'zustand';
-import { sab_API } from '../services/api';
+import { userState } from '../interfaces/interfaces';
 
-export const useCounterStore = create((set, get) => ({
-	logUser: async () => {
-		const user = await sab_API.post('auth/login/');
-	},
-	cleanUserStore: () => set({}, true),
-	getUser: () => {},
+export const userStore = create<userState>(set => ({
+	name: '',
+	token: '',
+	isAuthenticated: false,
+	setUser: (name: string) =>
+		set(() => ({
+			name: name,
+		})),
 }));
