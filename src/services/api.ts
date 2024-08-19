@@ -15,5 +15,5 @@ export const sab_API = axios.create({
 });
 
 export const getDocuments = async () => {
-	return sab_API.get<typeDocument[]>('/typedocument');
+	return sab_API.get<typeDocument[]>('typedocument');
 };
