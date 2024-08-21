@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getDocuments } from '../../services/api';
+import { getDocumentsApi } from '../../services/api';
 import { typeDocument } from '../../interfaces/interfaces';
 import { docStore } from '../../store/docStore';
 import { TableNotes } from '../../components/container/TableNotes';
 
-const Typedocument = () => {
+export const TypeDocList = () => {
+	//estado para llenar con la llamada de la api docs
 	const [docs, setDocs] = useState<typeDocument[]>([]);
+	//estado de prueba hasta que se arreglen los cors
 	const [docsTest, setDocsTest] = useState<typeDocument[]>(docStore);
 	/* const getListDocuments = async () => {
-		const response = getDocuments();
+		const response = getDocumentsApi();
 		setDocs((await response).data);
 	};
 
@@ -34,4 +36,3 @@ const Typedocument = () => {
 		</div>
 	);
 };
-export default Typedocument;

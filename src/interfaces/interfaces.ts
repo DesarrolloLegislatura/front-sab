@@ -6,7 +6,10 @@ export interface userState {
 }
 
 export interface typeDocument {
+	id: number;
 	name: string;
 	description: string;
 	active: number;
+	updateDocFromStorage: (data: typeDocument) => void;
+	setSelectedDoc: (data: typeDocument) => void;
 }

@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from '../App.tsx';
 import HomePage from '../pages/home/HomePage.tsx';
-import Typedocument from '../pages/typedocument/Typedocument.tsx';
 import ErrorPage from '../pages/error/ErrorPage.tsx';
+import { TypeDocUpd, TypeDocList, TypeDocCreate } from '../pages/typedocument';
 
 const router = createBrowserRouter([
 	{
@@ -15,8 +15,16 @@ const router = createBrowserRouter([
 				element: <HomePage />,
 			},
 			{
-				path: 'typedocument', // This is the default route
-				element: <Typedocument />,
+				path: 'typedocument', //List all docs
+				element: <TypeDocList />,
+			},
+			{
+				path: 'update', // update selected doc
+				element: <TypeDocUpd />,
+			},
+			{
+				path: 'create', // create a new doc type
+				element: <TypeDocCreate />,
 			},
 		],
 	},
